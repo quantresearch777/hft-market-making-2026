@@ -1,0 +1,9 @@
+[project]
+name = "cmf-hft-backtester"
+version = "0.1.0"
+description = "Explainable Python HFT market-making backtester for CMF HFT School entrance assignment"
+requires-python = ">=3.10"
+dependencies = ["PyYAML>=6.0"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
