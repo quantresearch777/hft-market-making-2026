@@ -136,7 +136,9 @@ Important conventions:
 ## Files To Review
 
 - `src/task2_solution.py` - final submission function.
-- `notebooks/task2_strategy_handoff_executed.ipynb` - compact notebook with tables and charts.
+- `notebooks/task2_strategy_handoff_github_preview.ipynb` - GitHub-preview-friendly notebook summary.
+- `notebooks/task2_strategy_handoff.md` - Markdown fallback with the same summary.
+- `notebooks/task2_strategy_handoff_executed.ipynb` - full executed notebook with tables and charts.
 - `reports/task2_experiment_log.md` - full experiment log with hypotheses, results, pros/cons and decisions.
 - `reports/task2_candidate_improvement_round3.md` - final candidate memo.
 - `reports/tables/` - result tables used in the report.
