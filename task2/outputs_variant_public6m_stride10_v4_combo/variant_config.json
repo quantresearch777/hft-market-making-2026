@@ -1,0 +1,63 @@
+{
+  "data_root": "/root/CMF/Task_1/liquidation_task_0520_unpacked/liquidation_task/data",
+  "start": "2025-11-01",
+  "end": "2026-04-29",
+  "symbols": [
+    "btcusdt",
+    "ethusdt"
+  ],
+  "variants": [
+    "current_hybrid",
+    "eth100_btc50_liq2_long",
+    "eth100_btc50_baseline_and_ret20_long",
+    "eth100_btc50_baseline_or_ret50_long",
+    "eth100_btc50_liq2_and_ret20_long",
+    "eth100_btc50_liq2_or_ret50_long",
+    "eth100_btc50_bybit_or_ret50_long",
+    "eth100_btc50_ret5_long"
+  ],
+  "variant_mappings": {
+    "current_hybrid": {
+      "30": "return5s_gt_50",
+      "120": "baseline_liq1s_d200_gt_100k",
+      "300": "baseline_liq1s_d200_gt_100k"
+    },
+    "eth100_btc50_liq2_long": {
+      "30": "symbol_return_eth100_btc50",
+      "120": "liq2s_d200_gt_2m",
+      "300": "liq2s_d200_gt_2m"
+    },
+    "eth100_btc50_baseline_and_ret20_long": {
+      "30": "symbol_return_eth100_btc50",
+      "120": "baseline_and_return5s_gt_20",
+      "300": "baseline_and_return5s_gt_20"
+    },
+    "eth100_btc50_baseline_or_ret50_long": {
+      "30": "symbol_return_eth100_btc50",
+      "120": "baseline_or_return5s_gt_50",
+      "300": "baseline_or_return5s_gt_50"
+    },
+    "eth100_btc50_liq2_and_ret20_long": {
+      "30": "symbol_return_eth100_btc50",
+      "120": "liq2s_and_return5s_gt_20",
+      "300": "liq2s_and_return5s_gt_20"
+    },
+    "eth100_btc50_liq2_or_ret50_long": {
+      "30": "symbol_return_eth100_btc50",
+      "120": "liq2s_or_return5s_gt_50",
+      "300": "liq2s_or_return5s_gt_50"
+    },
+    "eth100_btc50_bybit_or_ret50_long": {
+      "30": "symbol_return_eth100_btc50",
+      "120": "bybit5s_or_return5s_gt_50",
+      "300": "bybit5s_or_return5s_gt_50"
+    },
+    "eth100_btc50_ret5_long": {
+      "30": "symbol_return_eth100_btc50",
+      "120": "return5s_gt_50",
+      "300": "return5s_gt_50"
+    }
+  },
+  "trade_stride": 10,
+  "generated_at": "2026-05-30T04:48:09.313216+00:00"
+}
