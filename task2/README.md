@@ -11,6 +11,16 @@ The goal is to keep trades with better maker markout PnL while satisfying the tu
 
 ## Executive Summary
 
+How to read the numbers:
+
+```text
+pnl_all  = markout PnL if we keep every trade, i.e. no-filter baseline
+pnl_kept = markout PnL on trades selected by the strategy
+score    = pnl_kept - pnl_all
+```
+
+So the no-filter baseline always has score `0` by construction. The strategy is useful if `pnl_kept` is much better than `pnl_all`, while kept turnover stays above the required threshold.
+
 Final submitted strategy:
 
 | horizon | final rule | reason |
@@ -19,9 +29,17 @@ Final submitted strategy:
 | 120s | `liq2s_d200 > 2m` AND `return5s > 20 bps` | liquidation pressure plus a soft return guard improved 120s robustness |
 | 300s | `liq2s_d200 > 2m` | plain 2s liquidation pressure was more robust than combo guards on public-extra |
 
-Main result on the public 6-month stride=10 screen:
+Baseline vs final balanced strategy on the public 6-month stride=10 screen:
 
-| horizon | previous hybrid | final strategy |
+| horizon | no-filter pnl_all | balanced pnl_kept | improvement score |
+|---:|---:|---:|---:|
+| 30s | -0.0754 | 35.1172 | +35.1926 |
+| 120s | -0.0200 | 27.6819 | +27.7020 |
+| 300s | 0.0354 | 18.6545 | +18.6190 |
+
+Comparison with the previous conservative hybrid:
+
+| horizon | conservative score | balanced/final score |
 |---:|---:|---:|
 | 30s | 20.6530 | 35.1926 |
 | 120s | 6.9457 | 27.7020 |
@@ -33,11 +51,11 @@ Exact first-week check, full trade stream:
 2026-02-01 -> 2026-02-07, trade_stride = 1
 ```
 
-| horizon | score | pnl kept | kept turnover/day |
-|---:|---:|---:|---:|
-| 30s | 76.4753 | 76.5131 | $65.3M |
-| 120s | 42.8648 | 42.9284 | $31.4M |
-| 300s | 18.2710 | 18.3293 | $71.1M |
+| horizon | no-filter pnl_all | balanced pnl_kept | improvement score | kept turnover/day |
+|---:|---:|---:|---:|---:|
+| 30s | 0.0378 | 76.5131 | +76.4753 | $65.3M |
+| 120s | 0.0636 | 42.9284 | +42.8648 | $31.4M |
+| 300s | 0.0583 | 18.3293 | +18.2710 | $71.1M |
 
 ## Strategy Variants
 
