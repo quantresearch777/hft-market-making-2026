@@ -19,7 +19,15 @@ pnl_kept = markout PnL on trades selected by the strategy
 score    = pnl_kept - pnl_all
 ```
 
-So the no-filter baseline always has score `0` by construction. The strategy is useful if `pnl_kept` is much better than `pnl_all`, while kept turnover stays above the required threshold.
+For the no-filter baseline, we keep every trade. Therefore the kept set is exactly the same as the full trade set:
+
+```text
+no-filter: kept trades = all trades
+therefore: pnl_kept = pnl_all
+therefore: score = pnl_kept - pnl_all = 0
+```
+
+This does not mean the no-filter PnL is zero. It means the no-filter strategy has zero improvement over itself. The final strategy is useful if `pnl_kept` is much better than `pnl_all`, while kept turnover stays above the required threshold.
 
 Final submitted strategy:
 
