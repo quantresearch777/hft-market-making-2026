@@ -1,0 +1,9 @@
+symbol,source,q,threshold
+btcusdt,both,0.9,18049.637000000006
+btcusdt,both,0.95,42391.03187999995
+btcusdt,both,0.97,73874.167704
+btcusdt,both,0.99,212393.59364800205
+ethusdt,both,0.9,15013.302000000018
+ethusdt,both,0.95,35036.0136299999
+ethusdt,both,0.97,62649.5373455
+ethusdt,both,0.99,182334.4466586018
