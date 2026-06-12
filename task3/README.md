@@ -23,7 +23,7 @@ The idea is simple:
 - `reports/tables/` - generated metrics tables.
 - `reports/figures/` - generated event-study plots.
 - `notebooks/task3_large_liquidation_reaction_filter_executed.ipynb` - executed notebook handoff.
-- `submission/` - compact submission package without duplicated data.
+- `submission/` - compact submission package.
 
 ## Final Result
 
@@ -53,22 +53,9 @@ This is documented in `reports/task3_report.md`.
 
 Additional research branches are saved under `reports/experiments/`. The final report includes robustness tables by split, horizon, symbol, and daily score distribution.
 
-## Data Note
+## Data Requirements
 
-The dataset is not duplicated in this folder. Locally, Task 3 uses the existing Task 1 data:
-
-```text
-D:\Python\CMF\HFT_School\Task_1\liquidation_task
-```
-
-On the server, Task 3 should use:
-
-```text
-/root/CMF/Task_1   # existing dataset
-/root/CMF/Task_3   # this task's code, reports, notebook, outputs
-```
-
-The downloaded Task 3 archive was SHA256-identical to the Task 1 archive, so it was deleted from Task 3 to avoid wasting disk space.
+Raw market data is not committed to this repository. The notebook and scripts expect the course dataset to be available locally, and the dataset location should be passed through the `--data-root` argument when reproducing the full run.
 
 ## Run
 
@@ -76,7 +63,7 @@ Smoke run:
 
 ```bash
 python src/task3_research.py \
-  --data-root /root/CMF/Task_1 \
+  --data-root /path/to/course_dataset \
   --output-dir reports \
   --event-start 2025-12-01 \
   --event-end 2025-12-03 \

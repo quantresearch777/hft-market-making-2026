@@ -12,9 +12,9 @@ The submitted filter marks a trade as filtered (`f_i = 1`) when:
 - equivalently, because `trades.side` is taker side, the taker trade side is opposite to the liquidation side;
 - Bybit liquidation timestamps are shifted by `+200 ms` before matching.
 
-## Data Handling
+## Data
 
-The Task 3 archive was checked against the existing Task 1 archive by SHA256 and was identical, so the duplicate heavy archive was removed from the Task 3 folder. All server runs use the existing dataset under `/root/CMF/Task_1`.
+Raw market data is not committed to this repository. The notebook and scripts expect the course dataset to be available locally, and the dataset location should be configured through the `--data-root` argument when reproducing the full run.
 
 ## Large Liquidation Thresholds
 
