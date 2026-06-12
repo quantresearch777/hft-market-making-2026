@@ -23,7 +23,6 @@ The idea is simple:
 - `reports/tables/` - generated metrics tables.
 - `reports/figures/` - generated event-study plots.
 - `notebooks/task3_large_liquidation_reaction_filter_executed.ipynb` - executed notebook handoff.
-- `submission/` - compact submission package.
 
 ## Final Result
 
